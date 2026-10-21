@@ -1,0 +1,28 @@
+# Binaries & Large Tools
+*.AppImage
+*.iso
+*.img
+
+# Tizen Application Packages (keep binaries out of git)
+*.wgt
+*.tpk
+
+# Cryptographic Keys & Certificates (Strict Privacy & Security)
+*.p12
+*.cer
+*.crt
+*.csr
+*.key
+password.txt
+device-profile.xml
+
+# Unpacked Source Workdirs
+*_src/
+*modified.wgt
+
+# OS & Environment Files
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*

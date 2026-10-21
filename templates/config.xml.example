@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Samsung Tizen Smart TV Web Application Manifest Example
+  Reference: Tizen Web App Specification & Samsung TV Extension API
+-->
+<widget xmlns="http://www.w3.org/ns/widgets" 
+        xmlns:tizen="http://tizen.org/ns/widgets" 
+        id="http://yourdomain.org/tizen/sampleapp" 
+        version="1.0.0" 
+        viewmodes="maximized">
+    
+    <!-- Application & Package Identifier (alphanumeric, max 10 chars for package) -->
+    <tizen:application id="SampleApp1.SampleApp" package="SampleApp1" required_version="2.4"/>
+    
+    <!-- Web App Entrypoint -->
+    <content src="index.html"/>
+    
+    <!-- Smart Hub App Control / Eden Resume for Fast App Switching -->
+    <tizen:app-control>
+        <tizen:src name="index.html" reload="disable"/>
+        <tizen:operation name="http://samsung.com/appcontrol/operation/eden_resume"/>
+    </tizen:app-control>
+
+    <!-- App Metadata -->
+    <name>Sample Tizen App</name>
+    <description>Custom sideloaded web application for Samsung Smart TV.</description>
+    <author email="admin@example.local" href="https://github.com/your-username">Homelab Engineer</author>
+    <icon src="icon.png"/>
+    
+    <!-- Mandatory Platform Target Profile -->
+    <tizen:profile name="tv-samsung"/>
+    
+    <!-- Universal Screen Scaling -->
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    
+    <!-- Network Access Policy (CORS bypass for local API endpoints) -->
+    <access origin="*" subdomains="true"/>
+    
+    <!-- Standard Tizen Permissions -->
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/network.public"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.audio"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/systeminfo"/>
+
+    <!-- Samsung Partner / Product Extension Privileges -->
+    <!-- Essential for AVPlay hardware video decoders and TV product information -->
+    <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/avplay"/>
+
+    <!-- Display & Hardware Execution Settings -->
+    <tizen:setting screen-orientation="landscape" 
+                   context-menu="disable" 
+                   background-support="enable" 
+                   encryption="disable" 
+                   install-location="auto" 
+                   hwkey-event="enable"/>
+</widget>
