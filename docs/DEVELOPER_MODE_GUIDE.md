@@ -14,17 +14,21 @@ Samsung Smart TVs (Tizen OS 2.4 through 8.0+) do not permit direct sideloading o
 
 ## Step-by-Step Activation
 
-### Step 1: Open the Apps Menu
+### Step 1: Open the Apps Menu (and Apps Settings)
 1. Turn on the TV and press the **Home** button on the remote.
 2. Navigate horizontally to the **Apps** icon and press **Select / Enter**.
+3. > [!TIP]
+   > **Model-Specific Nuance (Crucial!):**  
+   > On older Tizen TVs, you can enter the sequence on the main Apps screen. However, on **newer Tizen models (Tizen 5.5+, Crystal UHD, QLED/OLED)**, pressing the numbers on the Apps homepage does nothing.  
+   > **You must navigate to the Settings (Gear Icon) in the top-right corner of the Apps screen first.** Open **Apps Settings** (where your list of installed downloaded apps is displayed).
 
 ### Step 2: Trigger the Developer Sequence
-1. Once inside the **Apps** panel, do not open any app.
+1. Once inside the **Apps panel** (or inside **Apps Settings** on newer models), do not launch any app.
 2. Using the physical remote control, press the numeric keys in rapid succession:
    ```
    1 -> 2 -> 3 -> 4 -> 5
    ```
-   *(Note: If using a minimalist Samsung Smart Remote without number buttons, press the "123" button on the remote to summon the on-screen numeric keypad, or use a universal/IR remote).*
+   *(Note: If using a minimalist Samsung Smart Remote without physical number buttons, press the **123** button on the remote to summon the on-screen numeric keypad, or use a universal/IR remote).*
 
 ### Step 3: Enter Host PC IP
 1. A blue popup dialogue titled **Developer Mode Configuration** will appear.

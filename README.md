@@ -33,18 +33,19 @@ Instead of fighting hardware constraints, DRM boundaries (Widevine L1), or close
 ```
 samsung-tizen-toolkit/
 ├── docs/
-│   ├── DEVELOPER_MODE_GUIDE.md    <-- Remote sequence (1-2-3-4-5) & cold reboot procedures
-│   ├── CERTIFICATES_AND_SIGNING.md <-- DUID pairing, Partner vs Public security profiles
-│   ├── SOURCE_EDITING_GUIDE.md    <-- Decompiling .wgt, editing HTML/CSS/JS, repackaging
-│   └── TROUBLESHOOTING.md         <-- Port 26101 timeouts, Tailscale route conflicts
+│   ├── DEVELOPER_MODE_GUIDE.md        <-- Remote sequence (1-2-3-4-5) & Apps Settings nuance
+│   ├── CERTIFICATES_AND_SIGNING.md    <-- DUID pairing, Partner vs Public security profiles
+│   ├── SOURCE_EDITING_GUIDE.md        <-- Decompiling .wgt, editing HTML/CSS/JS, repackaging
+│   ├── TAILSCALE_AND_REMOTE_ACCESS.md <-- Remote TV sideloading via Subnet Routers & route gotchas
+│   └── TROUBLESHOOTING.md             <-- Port 26101 timeouts, Tailscale route conflicts
 ├── scripts/
-│   ├── tv-connect.sh              <-- SDB connection and route diagnostics
-│   ├── wgt-unpack.sh              <-- Decompress .wgt into an editable source tree
-│   ├── wgt-pack.sh                <-- Clean signatures & repackage into .wgt
-│   └── tv-install.sh              <-- Push and sideload signed package onto TV
+│   ├── tv-connect.sh                  <-- SDB connection and route diagnostics
+│   ├── wgt-unpack.sh                  <-- Decompress .wgt into an editable source tree
+│   ├── wgt-pack.sh                    <-- Clean signatures & repackage into .wgt
+│   └── tv-install.sh                  <-- Push and sideload signed package onto TV
 ├── templates/
-│   └── config.xml.example         <-- Standard Tizen TV web manifest with AVPlay privileges
-├── .gitignore                     <-- Keeps keys, certs, and large AppImages out of VCS
+│   └── config.xml.example             <-- Standard Tizen TV web manifest with AVPlay privileges
+├── .gitignore                         <-- Keeps keys, certs, and large AppImages out of VCS
 └── README.md
 ```
 
@@ -54,7 +55,9 @@ samsung-tizen-toolkit/
 
 ### 1. Enable Developer Mode on the TV
 1. On your Samsung TV, navigate to **Apps**.
-2. Press remote sequence: `1 -> 2 -> 3 -> 4 -> 5`.
+   > **Tip for Newer Models (Tizen 5.5+, Crystal UHD, QLED/OLED):**  
+   > If pressing the sequence on the main Apps screen does nothing, select the **Settings (Gear Icon)** in the top-right corner of the Apps screen first.
+2. Press remote sequence in rapid succession: `1 -> 2 -> 3 -> 4 -> 5`.
 3. Toggle Developer Mode to **On**, input your development PC's IP, and click **OK**.
 4. **Cold reboot the TV**: Hold the physical remote Power button for 8 seconds until the Samsung boot logo displays.
    *(See [docs/DEVELOPER_MODE_GUIDE.md](docs/DEVELOPER_MODE_GUIDE.md) for full instructions).*
@@ -102,6 +105,7 @@ samsung-tizen-toolkit/
 - **[Developer Mode Guide](docs/DEVELOPER_MODE_GUIDE.md)**
 - **[Certificates & Signing Architecture](docs/CERTIFICATES_AND_SIGNING.md)**
 - **[Source Code Modification & Re-packaging](docs/SOURCE_EDITING_GUIDE.md)**
+- **[Tailscale Subnet Routing & Remote Sideloading](docs/TAILSCALE_AND_REMOTE_ACCESS.md)**
 - **[Troubleshooting Matrix](docs/TROUBLESHOOTING.md)**
 
 ---
