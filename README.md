@@ -16,7 +16,7 @@ keywords:
 > **Platform:** Samsung Tizen OS (v2.4 - v8.0+)  
 > **Target Device Architecture:** ARMv7 / AArch64 (Samsung UHD / Crystal / QLED / OLED)  
 > **Primary Tools:** Samsung Smart Development Bridge (`sdb`), `Apps2Samsung`, `zip`/`unzip`  
-> **Status:** Production Verified (`UA43U8000FKXXS`)  
+> **Status:** Production Verified (Tested on Samsung Crystal UHD / U8000 Series, Tizen 5.5+)  
 
 ---
 
