@@ -69,6 +69,8 @@ If you simply want to get **Moonfin** (Jellyfin client) and **Moonlight** (game 
    - Download and run the `Apps2Samsung.AppImage` tool on your computer.
    - Enter your TV's IP address and click **Scan/Connect** (it will auto-detect your TV model and DUID).
 
+   ![Apps2Samsung Desktop Interface](docs/images/apps2samsung_gui.png)
+
 3. **Select Apps & Click Install:**
    - The GUI provides a browser-like catalog of tested developer apps.
    - Select **Moonfin** and/or **Moonlight** (or any other available app).
