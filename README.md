@@ -51,43 +51,65 @@ samsung-tizen-toolkit/
 
 ---
 
-## 🚀 Quickstart Workflow
+## 🚀 Sideloading Workflows: Two Ways to Do It
 
-### 1. Enable Developer Mode on the TV
-1. On your Samsung TV, navigate to **Apps**.
-   > **Tip for Newer Models (Tizen 5.5+, Crystal UHD, QLED/OLED):**  
-   > If pressing the sequence on the main Apps screen does nothing, select the **Settings (Gear Icon)** in the top-right corner of the Apps screen first.
-2. Press remote sequence in rapid succession: `1 -> 2 -> 3 -> 4 -> 5`.
-3. Toggle Developer Mode to **On**, input your development PC's IP, and click **OK**.
-4. **Cold reboot the TV**: Hold the physical remote Power button for 8 seconds until the Samsung boot logo displays.
-   *(See [docs/DEVELOPER_MODE_GUIDE.md](docs/DEVELOPER_MODE_GUIDE.md) for full instructions).*
+Choose the path that fits what you want to achieve:
 
-### 2. Connect via SDB
-```bash
-# Connect to TV over SDB port 26101
-./scripts/tv-connect.sh <TV_IP>
-```
+### 🌟 Path A: The Fast 1-Click GUI Method (Recommended for 95% of Users)
+If you simply want to get **Moonfin** (Jellyfin client) and **Moonlight** (game streaming) running natively on your TV:
 
-### 3. Decompile & Inspect an App
-```bash
-# Unpack any .wgt into a source directory
-./scripts/wgt-unpack.sh ./Moonfin.wgt ./moonfin_src
-```
-- Edit JavaScript bundles to point default API endpoints to your LAN media server.
-- Inject custom CSS in `index.html` for subtitle contrast or theme styling.
-- Add permissions in `config.xml` (e.g., `avplay`, `network.public`).
+1. **Enable Developer Mode on the TV:**
+   - Navigate to **Apps** $\rightarrow$ select the **Settings (Gear Icon)** at the top-right corner.
+   - Using your remote, press in rapid succession: `1 -> 2 -> 3 -> 4 -> 5`.
+   - Set Developer Mode to **On**, input your development PC's IP, and click **OK**.
+   - **Cold reboot the TV (Crucial):** Hold the physical remote **Power** button for 8 seconds until the Samsung boot logo displays.  
+     *(See [docs/DEVELOPER_MODE_GUIDE.md](docs/DEVELOPER_MODE_GUIDE.md) for step-by-step photos/details).*
 
-### 4. Clean & Repackage
-```bash
-# Strips obsolete signature XMLs and builds clean package
-./scripts/wgt-pack.sh ./moonfin_src ./moonfin-custom.wgt
-```
+2. **Launch `Apps2Samsung`:**
+   - Download and run the `Apps2Samsung.AppImage` tool on your computer.
+   - Enter your TV's IP address and click **Scan/Connect** (it will auto-detect your TV model and DUID).
 
-### 5. Sign & Sideload
-1. Sign the generated `.wgt` using your Samsung Partner certificate profile (`Apps2Samsung.AppImage`).
-2. Sideload onto the TV:
+3. **Select Apps & Click Install:**
+   - The GUI provides a browser-like catalog of tested developer apps.
+   - Select **Moonfin** and/or **Moonlight** (or any other available app).
+   - Click **Install**.
+
+4. **One-Time Samsung Sign-In:**
+   - A Samsung login prompt will appear. Sign in with your standard Samsung account.
+   - The tool automatically requests official Samsung Partner certificates for your TV's DUID, signs the apps, transfers them over SDB port 26101, and installs them directly to your Smart Hub.
+   - **Done!** You can now stream with zero-latency hardware acceleration (`AVPlay`).
+
+---
+
+### 🛠️ Path B: The Advanced Track (Custom Source Editing & Reverse Engineering)
+For developers who want to inspect the source code, modify JS/HTML/CSS, add custom permissions in `config.xml`, or sideload a custom third-party `.wgt` not available in the catalog:
+
+1. **Connect via SDB CLI:**
    ```bash
-   ./scripts/tv-install.sh ./moonfin-custom.wgt
+   ./scripts/tv-connect.sh <TV_IP>
+   ```
+
+2. **Decompile & Unpack any `.wgt`:**
+   ```bash
+   ./scripts/wgt-unpack.sh ./Moonfin.wgt ./moonfin_src
+   ```
+
+3. **Inspect & Edit Source Code:**
+   - Edit JavaScript bundles to point default API endpoints to your LAN media server.
+   - Inject custom CSS in `index.html` for subtitle styling, font scaling, or custom themes.
+   - Add elevated permissions in `config.xml` (e.g., `avplay`, `network.public`).
+
+4. **Clean Obsolete Signatures & Repackage:**
+   ```bash
+   # Strips old signature checksums and builds clean .wgt
+   ./scripts/wgt-pack.sh ./moonfin_src ./moonfin-modified.wgt
+   ```
+
+5. **Sign & Sideload:**
+   - Sign the generated package with your Samsung Partner certificate profile (`~/.config/Apps2Samsung/Certificate/`).
+   - Sideload onto the TV:
+   ```bash
+   ./scripts/tv-install.sh ./moonfin-modified.wgt
    ```
 
 ---
