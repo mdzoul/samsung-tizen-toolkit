@@ -45,7 +45,7 @@ The open-source tool `Apps2Samsung.AppImage` automates Certificate Signing Reque
    ```bash
    ~/Downloads/samsung-tv-tools/Apps2Samsung.AppImage
    ```
-2. **Device Detection**: Enter TV IP (`192.168.4.27`) and click **Scan/Connect**. It automatically queries the DUID.
+2. **Device Detection**: Enter your TV's IP address (e.g., `192.168.1.100`) and click **Scan/Connect**. It automatically queries the DUID.
 3. **Samsung Account Auth**:
    - Provide your Samsung Account login credentials.
    - The tool generates `author.csr` and `distributor.csr`, sends them to Samsung's server (`svdca.samsungqbe.com`), and retrieves `signed_author.cer` and `signed_distributor.cer`.

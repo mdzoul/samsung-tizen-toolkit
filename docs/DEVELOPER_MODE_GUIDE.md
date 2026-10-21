@@ -29,7 +29,7 @@ Samsung Smart TVs (Tizen OS 2.4 through 8.0+) do not permit direct sideloading o
 ### Step 3: Enter Host PC IP
 1. A blue popup dialogue titled **Developer Mode Configuration** will appear.
 2. Toggle the switch from **Off** to **On**.
-3. In the **Host PC IP** field, enter your development computer's local IP address (e.g., `192.168.5.197`).
+3. In the **Host PC IP** field, enter your development computer's local IP address (e.g., `192.168.1.50`).
 4. Click **OK**.
 
 ### Step 4: Perform a Cold Reboot (Crucial!)

@@ -4,8 +4,8 @@
 
 ### Symptoms
 ```
-connecting to 192.168.4.27:26101 ...
-failed to connect to 192.168.4.27:26101
+connecting to <TV_IP>:26101 ...
+failed to connect to <TV_IP>:26101
 ```
 
 ### Root Causes & Fixes
@@ -21,11 +21,11 @@ failed to connect to 192.168.4.27:26101
 ## 2. Tailscale Subnet Route Hijacking
 
 ### Symptoms
-- Workstation cannot ping or connect to TV over Wi-Fi (`192.168.4.27`).
-- Traceroute shows packets heading toward `tailscale0` instead of the local Wi-Fi interface (`wlp9s0`).
+- Workstation cannot ping or connect to TV over Wi-Fi (`<TV_IP>`).
+- Traceroute shows packets heading toward `tailscale0` instead of the local Wi-Fi interface (e.g., `wlan0` / `wlp9s0`).
 
 ### Root Cause
-Tailscale's subnet router features advertise `192.168.4.0/22`. If your local machine runs Tailscale with `--accept-routes=true`, your kernel routing table prioritizes the Tailscale tunnel over physical Wi-Fi.
+Tailscale's subnet router features advertise local LAN subnets. If your local machine runs Tailscale with `--accept-routes=true`, your kernel routing table prioritizes the Tailscale virtual tunnel over the physical Wi-Fi interface.
 
 ### Fix
 Temporarily or permanently disable accepting subnet routes on the workstation:
@@ -34,8 +34,8 @@ tailscale set --accept-routes=false
 ```
 Verify route:
 ```bash
-ip route get 192.168.4.27
-# Output should show: via ... dev wlp9s0
+ip route get <TV_IP>
+# Output should show: via ... dev wlan0 / wlp9s0
 ```
 
 ---

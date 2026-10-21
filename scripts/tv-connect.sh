@@ -4,7 +4,15 @@
 # ==============================================================================
 set -euo pipefail
 
-TV_IP="${1:-${SAMSUNG_TV_IP:-192.168.4.27}}"
+TV_IP="${1:-${SAMSUNG_TV_IP:-}}"
+if [ -z "$TV_IP" ]; then
+    read -rp "[?] Enter Samsung Smart TV IP Address (e.g., 192.168.1.100): " TV_IP
+    if [ -z "$TV_IP" ]; then
+        echo "[-] Error: TV IP address is required." >&2
+        echo "    Usage: $0 <TV_IP> or set SAMSUNG_TV_IP environment variable." >&2
+        exit 1
+    fi
+fi
 SDB_PORT="${SAMSUNG_SDB_PORT:-26101}"
 
 # Ensure sdb binary is discoverable

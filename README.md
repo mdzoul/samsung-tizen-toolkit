@@ -61,8 +61,8 @@ samsung-tizen-toolkit/
 
 ### 2. Connect via SDB
 ```bash
-# Connect to TV (default IP: 192.168.4.27, port: 26101)
-./scripts/tv-connect.sh 192.168.4.27
+# Connect to TV over SDB port 26101
+./scripts/tv-connect.sh <TV_IP>
 ```
 
 ### 3. Decompile & Inspect an App
@@ -70,7 +70,7 @@ samsung-tizen-toolkit/
 # Unpack any .wgt into a source directory
 ./scripts/wgt-unpack.sh ./Moonfin.wgt ./moonfin_src
 ```
-- Edit JavaScript bundles to point default API endpoints to your LAN media server (`nucmediaserver`).
+- Edit JavaScript bundles to point default API endpoints to your LAN media server.
 - Inject custom CSS in `index.html` for subtitle contrast or theme styling.
 - Add permissions in `config.xml` (e.g., `avplay`, `network.public`).
 
@@ -103,3 +103,18 @@ samsung-tizen-toolkit/
 - **[Certificates & Signing Architecture](docs/CERTIFICATES_AND_SIGNING.md)**
 - **[Source Code Modification & Re-packaging](docs/SOURCE_EDITING_GUIDE.md)**
 - **[Troubleshooting Matrix](docs/TROUBLESHOOTING.md)**
+
+---
+
+## ⚖️ Legal & Responsible Use Disclaimer
+
+> **Notice:** This toolkit utilizes officially supported Samsung Tizen Developer Mode interfaces and standard W3C Widget specifications documented by Samsung Electronics for application developers.
+> 
+> - This project **does not** circumvent DRM (such as Widevine or PlayReady), crack hardware encryption, bypass paywalls, or modify protected TV firmware.
+> - This repository **does not** host, redistribute, or license proprietary Samsung binaries or copyrighted third-party media.
+> - All scripts and documentation are provided strictly for educational, personal research, and open-source homelab development purposes under the MIT License.
+
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
