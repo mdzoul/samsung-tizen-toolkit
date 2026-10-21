@@ -56,7 +56,7 @@ samsung-tizen-toolkit/
 Choose the path that fits what you want to achieve:
 
 ### 🌟 Path A: The Fast 1-Click GUI Method (Recommended for 95% of Users)
-If you simply want to get **Moonfin** (Jellyfin client) and **Moonlight** (game streaming) running natively on your TV:
+While this repository specifically showcases **Moonfin** (hardware-accelerated Jellyfin client) and **Moonlight** (low-latency game streaming) for our private homelab setup, `Apps2Samsung` gives you access to a wide ecosystem of community-developed Tizen apps (including **TizenTube** for ad-free YouTube, official Jellyfin, custom dashboards, and more). You can pick and choose whatever matches your entertainment setup!
 
 1. **Enable Developer Mode on the TV:**
    - Navigate to **Apps** $\rightarrow$ select the **Settings (Gear Icon)** at the top-right corner.
@@ -73,7 +73,7 @@ If you simply want to get **Moonfin** (Jellyfin client) and **Moonlight** (game 
 
 3. **Select Apps & Click Install:**
    - The GUI provides a browser-like catalog of tested developer apps.
-   - Select **Moonfin** and/or **Moonlight** (or any other available app).
+   - Select your desired apps (e.g., **Moonfin**, **Moonlight**, or any other community apps in the catalog).
    - Click **Install**.
 
 4. **One-Time Samsung Sign-In:**
