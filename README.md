@@ -1,16 +1,3 @@
----
-created: 2026-10-21
-project: Homelab Refactor 2026
-tags: [homelab, tizen, samsung-tv, reverse-engineering, streaming]
-keywords:
-  - samsung-tv
-  - tizen-os
-  - sdb
-  - moonfin
-  - moonlight
-  - sideloading
----
-
 # 📺 Samsung Tizen TV Sideloading & Reverse Engineering Toolkit
 
 > **Platform:** Samsung Tizen OS (v2.4 - v8.0+)  
@@ -152,4 +139,3 @@ For developers who want to inspect the source code, modify JS/HTML/CSS, add cust
 
 ## 📄 License
 This project is licensed under the [MIT License](LICENSE).
-<!-- mirror test: verified -->
