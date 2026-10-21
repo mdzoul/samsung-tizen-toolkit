@@ -1,5 +1,10 @@
 # Decompiling, Modifying & Repackaging Tizen TV Apps
 
+> [!NOTE]
+> **Experimental Reference Only:**  
+> In our day-to-day homelab setup, we used the **Apps2Samsung GUI** (Path A) to install tested community apps. The steps in this guide are provided strictly as an educational reference for developers interested in inspecting Tizen `.wgt` containers.  
+> For building production widgets or debugging Tizen SDK issues, please refer to the official [Samsung Tizen Developer Portal](https://developer.samsung.com/smarttv), as we do not provide support for custom widget modding.
+
 ## Anatomy of a `.wgt` Package
 A Tizen `.wgt` (Web Widget) package is structurally an uncompressed or zip-compressed archive following the W3C Widget specification. Inside every package:
 

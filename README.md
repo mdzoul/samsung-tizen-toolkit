@@ -83,7 +83,13 @@ While this repository specifically showcases **Moonfin** (hardware-accelerated J
 
 ---
 
-### 🛠️ Path B: The Advanced Track (Custom Source Editing & Reverse Engineering)
+### 🛠️ Path B: Advanced / Experimental Track (Custom .wgt Unpacking & Modding)
+
+> [!NOTE]
+> **Maintainer Note on Support & Scope:**  
+> In our real-world homelab setup, we used the **1-Click GUI method (Path A)** to install our apps and did not need to manually decompile or modify `.wgt` packages. The scripts and notes below are provided strictly as experimental reference for tinkerers.  
+> If you are building or reverse-engineering custom Tizen widgets, please consult the official [Samsung Tizen Developer Documentation](https://developer.samsung.com/smarttv) or dedicated upstream widget repos, as we are unable to provide technical support for custom `.wgt` modifications!
+
 For developers who want to inspect the source code, modify JS/HTML/CSS, add custom permissions in `config.xml`, or sideload a custom third-party `.wgt` not available in the catalog:
 
 1. **Connect via SDB CLI:**
